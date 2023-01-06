@@ -11,7 +11,7 @@ type Booking struct {
 	gorm.Model
 
 	Date_Start time.Time `valid:"IsFuture~กรุณาเลือกเวลาล่วงหน้า"` // เวลาอนาคต A
-	Date_End   time.Time `valid:"IsFuture~กรุณาเลือกเวลาล่วงหน้า`  // เวลาอนาคต B โดย B > A ตรงเช็ดด้วย
+	Date_End   time.Time `valid:"IsFuture~กรุณาเลือกเวลาล่วงหน้า"` // เวลาอนาคต B โดย B > A ตรงเช็ดด้วย
 
 	// ผู้จองใช้ห้อง
 	User   User `gorm:"references:id" valid:"-"`
