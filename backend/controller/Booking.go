@@ -42,7 +42,14 @@ func CreateBooking(c *gin.Context) {
 	}
 
 	//สร้าง Booking
-	bod := entity.Booking{}
+	bod := entity.Booking{
+		Date_Start: booking.Date_Start,
+		Date_End:   booking.Date_End,
+
+		User:      user,
+		Objective: objective,
+		Room:      Room,
+	}
 
 	// ขั้นตอนการ validate
 	if _, err := govalidator.ValidateStruct(bod); err != nil {
