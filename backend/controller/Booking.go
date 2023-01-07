@@ -25,7 +25,7 @@ func CreateBooking(c *gin.Context) {
 
 	// ค้นหา book_type ด้วย id
 	if tx := entity.DB().Where("id = ?", booking.UserID).First(&user); tx.RowsAffected == 0 {
-		c.JSON(http.StatusBadRequest, gin.H{"error": "user not found"})
+		c.JSON(http.StatusBadRequest, gin.H{"error": "User not found"})
 		return
 	}
 
